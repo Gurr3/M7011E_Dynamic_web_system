@@ -28,11 +28,10 @@ School project for the course M7011E at Luleå technical University, Sweden.
 	npm install *module*
 
 #Other files required
-
+```rout
 workspace/dbsalt.dontsave
-
 workspace/sessionsalt.dontsave
-
+```
 These need to look like: 
 ```json
 { "secret" : "supersecretsalt"}
