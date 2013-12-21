@@ -28,7 +28,7 @@ School project for the course M7011E at Luleå technical University, Sweden.
 	npm install *module*
 
 #Other files required
-```rout
+```bash
 workspace/dbsalt.dontsave
 workspace/sessionsalt.dontsave
 ```
