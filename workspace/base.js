@@ -166,7 +166,7 @@ app.get('/api/user/me',ensureAuthenticated, function(req,res){
 });
 
 
-app.post('/api/db/content/add', function(req,res){ 
+app.post('/api/db/content/add',ensureAuthenticated, function(req,res){ 
 	if (req.files) {
 	//if (req.files.file.type.indexOf('image/')!=-1){res.send(415);}
 		makeC(req.body.name, req.files.file.path, req.body.parent, function(cres){
@@ -200,7 +200,7 @@ app.post('/api/db/content/link/:dig(\\d+)', function(req,res){
 	});
 });
 
-app.post('/api/db/content/link/add/:dig(\\d+)', function(req,res){
+app.post('/api/db/content/link/add/:dig(\\d+)', ensureAuthenticated, function(req,res){
 	db.soundslike(req.params.dig, req.body.key1, req.body.key2, function(err, response){
 		if (err) {console.log('\nERR: link/add: '+err); res.send(400);}
 		res.redirect('/api/db/content/'+req.body.key1+'/'+req.params.dig);
