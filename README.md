@@ -25,7 +25,9 @@ School project for the course M7011E at Luleå technical University, Sweden.
 	crypto
 
 #Installing node modules
-	npm install *module*
+```console
+npm install *module*
+```
 
 #Other files required
 ```console
@@ -36,4 +38,4 @@ These need to look like:
 ```json
 { "secret" : "supersecretsalt"}
 ```
-Where "supersecretsalt" can be a string of your choice
+Where `"supersecretsalt"` can be a string of your choice
