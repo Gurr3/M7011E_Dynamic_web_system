@@ -39,3 +39,8 @@ These need to look like:
 { "secret" : "supersecretsalt"}
 ```
 Where `"supersecretsalt"` can be a string of your choice
+
+#Running the application
+```console
+workspace/base.js
+```

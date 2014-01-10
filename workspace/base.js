@@ -23,7 +23,6 @@ app.configure(function() {
   app.use('/images/fake/', express.static(__dirname + '/views/images/fake/'));
   app.use('/fonts', express.static(__dirname + '/views/fonts'));
   app.use('/js', express.static(__dirname + '/views/js'));
-  app.use('C:\\fakepath\\', express.static('/tmp'));
   
   //logs, parses cookies and other
   app.use(express.logger());
@@ -276,39 +275,6 @@ app.get('/api/db/content/:content/:dig(\\d+)', function(req, res){
 		}
 	});
 });
-
-app.post(/^\/api\/db\/content\/(\w+)(?:\.\.(\w+))?\/edit$/, function(req, res){
-	console.log("\n");
-	console.log("post <c>/edit");
-	console.log("<c>= "+req.params[0]);
-	console.log(req.body.parent);
-	console.log(req.body.content);
-	console.log("\n");
-	res.send('c = '+req.params[0]+' parent= '+req.body.parent +' content= '+req.body.content);
-});
-
-app.post(/^\/api\/db\/content\/(\w+)(?:\.\.(\w+))?\/rate$/, function(req, res){
-	console.log("\n");
-	console.log("post <c>/rate");
-	console.log("<c>= "+req.params[0]);
-	console.log(req.body.value);
-	console.log("\n");
-	res.send('c = '+req.params[0]+' value= '+req.body.value);
-});
-
-app.post(/^\/api\/db\/content\/(\w+)(?:\.\.(\w+))?\/review$/, function(req, res){
-	console.log("\n");
-	console.log("post <c>/review");
-	console.log("<c>= "+req.params[0]);
-	console.log(req.body.title);
-	console.log(req.body.review)
-	console.log("\n");
-	res.send('c = '+req.params[0]+' title= '+req.body.title+ ' review= '+req.body.review);
-});
-
-
-
-
 
 
 // error handling middleware.
