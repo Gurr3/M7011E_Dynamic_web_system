@@ -41,6 +41,8 @@ These need to look like:
 Where `"supersecretsalt"` can be a string of your choice
 
 #Running the application
+in the console, go to the place where the application has been downloaded to and run
 ```console
-workspace/base.js
+nodejs workspace/base.js
 ```
+'nodejs' can be changed if node is bound to another command
