@@ -134,20 +134,7 @@ app.post('/results', function(req,res){
 	});
 });
 
-app.post('/link', function(req,res){
-	db.getbyname(req.body.sacrifice.level, req.body.sacrifice.name, function(err1, response1){
-		if (err1) { console.log('\nERR: /link getbyid' + req.body.level + req.body.search); res.send(500); }
-		else if  (req.body.alike){
-			db.getbyname(req.body.sacrifice.level, req.body.alike, function(err, response){
-				if (err) { console.log('\nERR: /link getbyid' + req.body.level + req.body.search); res.send(500); }
-				res.render('link', {sacrifice: response1[0] , soundslikelist: response, login : authname(req)});
-			});
-		} 
-		else{
-			res.render('link', {sacrifice: response1[0] , soundslikelist: [] , login : authname(req)});
-		}
-	});
-});
+
 
 
 
