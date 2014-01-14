@@ -115,7 +115,8 @@ app.get('/files/:name/:d(\\d+)', function(req,res){
 		console.log('reaching for /files/:name/:d : ' + req.params.name+ " "+req.params.d);
 		db.getbyname(req.params.d, req.params.name, function(err, dbres){
 			if (err){console.log('\nERR: /files/name/d: '+err); res.send(404);}
-			res.end(dbres[0].info.value.buffer, "binary");
+			else if (dbres[0]===null | dbres[0]==='null'){res.send(404);}
+			else res.end(dbres[0].info.value.buffer, "binary");
 		});
 });
 
